@@ -1,11 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { PizzaFactoryComponent } from './pizza-factory/pizza-factory.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        PizzaFactoryComponent
       ],
     }).compileComponents();
   });
@@ -22,10 +24,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('PizzaFactory');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('PizzaFactory app is running!');
-  });
 });
