@@ -1,0 +1,26 @@
+<div>
+    <p>
+        Pizza to be baked: {{pizzaToBeBaked}}
+    </p>
+    <div *ngIf="factoryRunning">
+        <p>
+            Baking In Progress
+        </p>
+    </div>
+    <button type="button" (click)="startFactory()" *ngIf="!factoryRunning && pizzaToBeBaked !== 0">
+        Start Factory
+    </button>
+    <div *ngIf="pizzaBakedList.length > 0">
+        <p>Pizza Baked List.</p>
+        <ol>
+            <ng-container *ngFor="let item of pizzaBakedList">
+                <li>{{item}}</li>
+            </ng-container>
+        </ol>
+    </div>
+    <div *ngIf="pizzaToBeBaked === 0 && !factoryRunning">
+        <p>
+            Factory Stopped.
+        </p>
+    </div>
+</div>
